@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>My First Flask Project</title>
-  <body>
-   <h1>Hallo, Welt!</h1>
-   <h2>testing</h2>
-   <img src={{url_for('static', filename="dresden.jpg")}} height="300" width = "400"/>
-  </body>
- <head>
-</html>
+{% extends 'base.html' %}
+    {% block body %}
+    <h1>Hallo, Welt!</h1>
+    <h2>testing</h2>
+    <img src={{url_for('static', filename="dresden.jpg")}} height="300" width = "400"/>
+    <ul>
+        {% for dorf in dörfer %}
+        <li>{{dorf}}</li>
+        {% endfor %}
+    </ul>
+    {% if 'Meißen' in dörfer %}
+        <p>Meißen ist ein sächsisches Dorf.</p>
+    {% else %}
+        <p>Meißen ist kein sächsisches Dorf.</p>
+    {% endif %}
+    {% endblock %}
