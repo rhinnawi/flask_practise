@@ -1,5 +1,5 @@
 # import Flask module
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, redirect
 
 # Instantiate Flask object (the app)
 app = Flask(__name__)
@@ -12,7 +12,19 @@ Need function to handle the decorator
 '''
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # return render_template('index.html') # rendered index.html 
+    '''
+    url_for can construct URLs for other routes
+    uses their function as the argument
+    returns a string with the URL ending
+
+    to redirect to actual page, use redirect module
+    '''  
+    return redirect(url_for('about'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 # Allows this to be the file that gets executed
 if __name__ == '__main__':
