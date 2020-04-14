@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <title>My First Flask Project</title>
- </head>
-<body>
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+    My First Flask Project
+{% endblock %}
+{% block content %}
     {% block body %}
     {% endblock %}
-</body>
-</html>
+{% endblock %}

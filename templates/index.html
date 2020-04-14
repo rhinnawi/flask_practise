@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
     {% block body %}
-    <h1>Hallo, Welt!</h1>
+    <div class="jumbotron">
+        <h1>Hallo, Welt!</h1>
+    </div>
     <h2>testing</h2>
     <img src={{url_for('static', filename="dresden.jpg")}} height="300" width = "400"/>
     <ul>
@@ -13,4 +15,8 @@
     {% else %}
         <p>Meißen ist kein sächsisches Dorf.</p>
     {% endif %}
+    <form method="POST">
+        <input type="password" name="password"/>
+        <input type="submit"/>
+    </form>
     {% endblock %}
